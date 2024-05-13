@@ -125,6 +125,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         getKeys();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleAuthClick = () => {
