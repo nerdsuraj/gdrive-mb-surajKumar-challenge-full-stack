@@ -28,7 +28,7 @@ const Dashboard = () => {
     };
 
     const getKeys = () => {
-        axios.post('http://localhost:4000/api/get-keys')
+        axios.post('https://drive-test-api.vercel.app/api/get-keys')
             .then((response) => {
                 setApiKey(response.data.apiKey);
                 setClientId(response.data.clientId);
@@ -113,7 +113,7 @@ const Dashboard = () => {
     };
 
     const savetoken = (token) => {
-        axios.post('http://localhost:4000/api/save-token', { accessToken: token })
+        axios.post('https://drive-test-api.vercel.app/api/save-token', { accessToken: token })
             .then((response) => {
                 console.log("Response: ", response.data);
             })
