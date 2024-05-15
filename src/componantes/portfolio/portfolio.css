@@ -11,19 +11,25 @@
 }
 
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    /* gap: 20px; */
 }
 
 .testimonial-card {
     background-color: white;
+    margin:10px;
+    max-width:480px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
-
+.testimonial_wrapper{
+    margin:auto;
+}
 .testimonial-rating {
     color: #ff9800;
     font-size: 1.2em;

@@ -5,6 +5,8 @@ import App from './App';
 import Dashboard from './componantes/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const appRouter = createBrowserRouter(
   [

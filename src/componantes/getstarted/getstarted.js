@@ -25,12 +25,12 @@ const GetStarted = () => {
                     <p>Request a demo to see how our platform can give you unparalleled visibility and control over your sensitive data.</p>
                     <button className="btn">Book a Demo</button>
                 </div>
-                <div className="card">
+                {/* <div className="card">
                     <h3>See all our Metomic features in action. Book a demo.</h3>
                     <p>Let’s see how Metomic can help your business.</p>
                     <p>Request a demo to see how our platform can give you unparalleled visibility and control over your sensitive data.</p>
                     <button className="btn">Book a Demo</button>
-                </div>
+                </div> */}
             </div>
         </div>
     )
