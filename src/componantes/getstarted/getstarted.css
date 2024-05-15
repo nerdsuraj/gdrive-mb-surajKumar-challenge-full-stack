@@ -1,0 +1,64 @@
+.get-started {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.get-started-heading {
+    color: #2e2e2e;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.get-started-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: left;
+    position: relative;
+}
+
+.card h3 {
+    color: #5c5aa6;
+    margin-top: 0;
+}
+
+.card p {
+    color: #555;
+}
+
+.card .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5c5aa6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.recommended {
+    border: 2px solid #ff7e00;
+}
+
+.recommended-badge {
+    background-color: #ff7e00;
+    color: white;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border-radius: 5px;
+}
