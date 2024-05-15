@@ -5,6 +5,7 @@ import './App.css';
 import Portfolio from './componantes/portfolio/portfolio';
 import Uncover from './componantes/uncover/uncover';
 import GetStarted from './componantes/getstarted/getstarted';
+import Footer from './componantes/footer/footer';
 import images from './images/images.png';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
       <Portfolio />
       <Uncover />
       <GetStarted />
+      <Footer />
     </div>
 
   );
