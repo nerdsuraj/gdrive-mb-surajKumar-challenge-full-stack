@@ -136,9 +136,6 @@ const Dashboard = () => {
         gapi.auth2.getAuthInstance().signOut();
     };
 
-    if (isLoading) {
-        return <div className="loader">Loading...</div>;
-    }
 
     if (!isSignedIn) {
         return (
@@ -150,91 +147,116 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
+        {isLoading && (
+            <div className="loader">
+                <div>Loading...</div>
+            </div>
+        )}
+        <header className="dashboard-header">
             <h2>
                 <FontAwesomeIcon icon={faGoogleDrive} style={{ marginRight: '10px', verticalAlign: 'middle' }} />
                 Google Drive Risk Report
             </h2>
-            <div className="section">
-                <h3>Publicly Accessible Files</h3>
-                {publicFiles.length > 0 ? (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>File Name</th>
-                                <th>Access Setting</th>
-                                <th>Shared With</th>
-                                <th>Created By</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {publicFiles.map(file => (
-                                <tr key={file.id}>
-                                    <td>{file.name}</td>
-                                    <td>Public</td>
-                                    <td>{file.permissions.filter(p => p.type === 'user').length}</td>
-                                    <td>{file.owners[0].displayName}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                ) : <p>No publicly accessible files.</p>}
+            <div className="risk-summary">
+                <div className="risk-item">
+                    <div className="risk-score">75</div>
+                    <p>Risk Score</p>
+                </div>
+                <div className="risk-item">
+                    <div className="risk-number">{publicFiles.length}</div>
+                    <p>Public files</p>
+                </div>
+                <div className="risk-item">
+                    <div className="risk-number">{peopleWithAccess.length}</div>
+                    <p>People with access</p>
+                </div>
+                <div className="risk-item">
+                    <div className="risk-number">{externalFiles.length}</div>
+                    <p>Files shared externally</p>
+                </div>
             </div>
-            <div className="section">
-                <h3>People with Access to Your Google Drive</h3>
-                {peopleWithAccess.length > 0 ? (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>File Name</th>
-                                <th>Access Setting</th>
-                                <th>Shared With</th>
-                                <th>Created By</th>
+        </header>
+        <div className="section">
+            <h3>1. Publicly Accessible Files</h3>
+            {publicFiles.length > 0 ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Access Setting</th>
+                            <th>Shared With</th>
+                            <th>Created By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {publicFiles.map(file => (
+                            <tr key={file.id}>
+                                <td>{file.name}</td>
+                                <td>Anyone with link</td>
+                                <td>{file.permissions.filter(p => p.type === 'user').length}</td>
+                                <td>{file.owners[0].displayName}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {peopleWithAccess.map(file => (
-                                <tr key={file.id}>
-                                    <td>{file.name}</td>
-                                    <td>Specific Users</td>
-                                    <td>{file.permissions.filter(p => p.type === 'user').length}</td>
-                                    <td>{file.owners[0].displayName}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                ) : <p>No people with access found.</p>}
-            </div>
-            <div className="section">
-                <h3>Files Shared Externally</h3>
-                {externalFiles.length > 0 ? (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>File Name</th>
-                                <th>Access Setting</th>
-                                <th>Shared With</th>
-                                <th>Created By</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {externalFiles.map(file => (
-                                <tr key={file.id}>
-                                    <td>{file.name}</td>
-                                    <td>External</td>
-                                    <td>{file.permissions.filter(p => p.type === 'user').length}</td>
-                                    <td>{file.owners[0].displayName}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                ) : <p>No files shared externally.</p>}
-            </div>
-            {!isSignedIn ? (
-                <button onClick={handleAuthClick}>Sign in with Google</button>
-            ) : (
-                <button onClick={handleSignoutClick}>Sign Out</button>
-            )}
+                        ))}
+                    </tbody>
+                </table>
+            ) : <p>No publicly accessible files.</p>}
         </div>
+        <div className="section">
+            <h3>2. People with Access to Your Google Drive</h3>
+            {peopleWithAccess.length > 0 ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Access Setting</th>
+                            <th>Shared With</th>
+                            <th>Created By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {peopleWithAccess.map(file => (
+                            <tr key={file.id}>
+                                <td>{file.name}</td>
+                                <td>Anyone with link</td>
+                                <td>{file.permissions.filter(p => p.type === 'user').length}</td>
+                                <td>{file.owners[0].displayName}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : <p>No people with access found.</p>}
+        </div>
+        <div className="section">
+            <h3>3. Files Shared Externally</h3>
+            {externalFiles.length > 0 ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Access Setting</th>
+                            <th>Shared With</th>
+                            <th>Created By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {externalFiles.map(file => (
+                            <tr key={file.id}>
+                                <td>{file.name}</td>
+                                <td>External</td>
+                                <td>{file.permissions.filter(p => p.type === 'user').length}</td>
+                                <td>{file.owners[0].displayName}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : <p>No files shared externally.</p>}
+        </div>
+        {!isSignedIn ? (
+            <button className="auth-button" onClick={handleAuthClick}>Sign in with Google</button>
+        ) : (
+            <button className="auth-button" onClick={handleSignoutClick}>Sign Out</button>
+        )}
+    </div>
     );
 }
 

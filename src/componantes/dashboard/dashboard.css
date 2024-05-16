@@ -1,27 +1,48 @@
 .dashboard {
     font-family: Arial, sans-serif;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background: #f8f8f8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-h2 {
-    color: #333;
+.dashboard-header {
+    background-color: #6c63ff;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.risk-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.risk-item {
     text-align: center;
 }
 
-.dashboard h2 {
-    align-items: center;
-    font-size: 24px;
+.risk-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff9800;
 }
 
-.dashboard h2 img,
-.dashboard h2 svg {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+.risk-number {
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .section {
@@ -29,10 +50,11 @@ h2 {
     background: white;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 h3 {
-    color: #555;
+    color: #333;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -60,7 +82,13 @@ table tr:hover {
     background-color: #f5f5f5;
 }
 
-button {
+
+table tr,
+table td {
+    color: #180b0b;
+}
+
+.auth-button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -71,20 +99,27 @@ button {
     outline: none;
 }
 
-button:hover {
+.button-container {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.auth-button:hover {
     background-color: #45a049;
 }
 
 .loader {
-    position: fixed; 
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
     color: #4CAF50;
-}
-
-.button-container {
-    text-align: center;
-    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
 }
