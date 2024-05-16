@@ -61,6 +61,10 @@ html {
     display: flex;
     justify-content: space-between;
     padding: 50px;
+    background: #20002c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .left-panel {
@@ -107,11 +111,11 @@ ul li:before {
     width: 40%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .report-image {
     width: 100%;
     max-width: 600px;
-    height: 68%;
+    /* height: 68%; */
 }

@@ -37,22 +37,22 @@ function App() {
           </nav>
         </div>
       </header>
-      <main className="content">
+      <div className="content">
         <div className="left-panel">
           <h2>Data Breach Finder</h2>
-          <h3>Check if your Google Drive is leaking sensitive data</h3>
+          <h3 className="text-white">Check if your Google Drive is leaking sensitive data</h3>
           <button className="btn">Free Google Drive Risk Report</button>
-          <ul>
+          <ul className="text-white">
             <li>See how secure your Google Drive account is in seconds</li>
             <li>Discover who still has access to your files, and who they were created by</li>
             <li>Find risky files exposed publicly to anyone on the internet</li>
           </ul>
-          <p>After your scan is completed, we'll delete all collected data and remove our access permissions within 24 hours. We will not read any of your files' content at any time.</p>
+          <p className="text-white">After your scan is completed, we'll delete all collected data and remove our access permissions within 24 hours. We will not read any of your files' content at any time.</p>
         </div>
         <div className="right-panel">
           <img src="https://i.ibb.co/qDjMj8y/image-1.png" alt="Google Drive Risk Report" className="report-image" />
         </div>
-      </main>
+      </div>
       <Portfolio />
       <Uncover />
       <GetStarted />
