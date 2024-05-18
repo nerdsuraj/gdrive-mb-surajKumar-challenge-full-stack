@@ -1,7 +1,4 @@
 import './App.css';
-// import { Link ,Outlet} from 'react-router-dom';
-// import Header from './componantes/header/header';
-// import Portfolio from './componantes/portfolio/portfolio';
 import Portfolio from './componantes/portfolio/portfolio';
 import Uncover from './componantes/uncover/uncover';
 import GetStarted from './componantes/getstarted/getstarted';
@@ -12,15 +9,6 @@ function App() {
 
 
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     {/* <Link to="/dashboard">
-    //       <button className='checkrisk'>Give a try!!</button>
-    //     </Link> */}
-    //     <Header />
-    //   </header>
-    //   {/* <Outlet /> */}
-    // </div>
     <div className="app">
       <header className="header">
         <div className="navbar">
