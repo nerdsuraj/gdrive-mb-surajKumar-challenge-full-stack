@@ -103,6 +103,11 @@ table td {
     text-align: center;
     margin-top: 20vh;
 }
+.google_signin{
+    color: blue;
+    border: 50px;
+    background-color: black;
+}
 
 .auth-button:hover {
     background-color: #45a049;

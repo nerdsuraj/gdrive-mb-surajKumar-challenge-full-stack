@@ -140,7 +140,7 @@ const Dashboard = () => {
     if (!isSignedIn) {
         return (
             <div className="button-container">
-                <button onClick={handleAuthClick}>Sign in with Google</button>
+                <button className='google_signin' onClick={handleAuthClick}>Sign in with Google</button>
             </div>
         );
     }

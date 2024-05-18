@@ -4,6 +4,7 @@ import Uncover from './componantes/uncover/uncover';
 import GetStarted from './componantes/getstarted/getstarted';
 import Footer from './componantes/footer/footer';
 import images from './images/images.png';
+import {Link } from 'react-router-dom';
 
 function App() {
 
@@ -20,7 +21,9 @@ function App() {
             <a href="#resources">Resource Centre</a>
             <a href="#company">Company</a>
             <a href="#partners">Partners</a>
-            <button className="nav-button">Run free scan</button>
+            <Link to="/dashboard">Login
+            <button className="nav-button" >Run free scan</button>
+            </Link>
             <button className="nav-button primary">Book a demo</button>
           </nav>
         </div>
