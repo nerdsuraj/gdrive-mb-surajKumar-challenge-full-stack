@@ -3,6 +3,7 @@ import './footer.css';
 import logo1 from '../../images/logo1.jpg';
 import logo2 from '../../images/logo2.jpg';
 import logo3 from '../../images/logo3.png';
+import {Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -68,7 +69,9 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="footer-promo">
                     <h3>Check if your Google Drive is leaking sensitive data</h3>
+                    <Link to="/dashboard">
                     <button className="footer-btn">Run a free scan</button>
+                    </Link>
                 </div>
                 <div className="footer-certifications">
                     <img src={logo1} alt="Certification 1" />
